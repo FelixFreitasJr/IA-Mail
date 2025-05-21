@@ -5,3 +5,4 @@ torch
 openai
 python-dotenv
 requests
+gunicorn
