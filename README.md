@@ -89,20 +89,26 @@ source .venv/bin/activate
 
 5. **Acesso à Aplicação: Abra seu navegador e acesse http://127.0.0.1:5000**
 
+## Funcionalidades Implementadas
+
+
+- **Commit 3 – Classificação com IA:**
+  - Integração do modelo de classificação zero-shot (usando `facebook/bart-large-mnli` da Hugging Face)
+  - Classificação dos emails em **Produtivo** ou **Improdutivo**
+  - Exibição do rótulo e do score na interface
 
 
 ## Roadmap e Próximos Passos
 
-**Fases futuras:**
-
-- **Commit 3 – Classificação com IA:**  
-  Integraremos uma pipeline de zero-shot classification utilizando, por exemplo, o modelo `facebook/bart-large-mnli` para identificar se o email é **Produtivo** ou **Improdutivo**.
-
 - **Commit 4 – Geração de Resposta com OpenAI:**  
-  Implementaremos a API do OpenAI para sugerir respostas automáticas baseadas na classificação feita.
+  Integrar a API do OpenAI para sugerir respostas automáticas baseadas na classificação.
 
 - **Commit 5 – Integração Frontend + Backend & Refinamento:**  
-  Aperfeiçoaremos a interface com Bootstrap e integraremos tudo de forma a criar uma experiência amigável para o usuário.
+  Aperfeiçoar a experiência do usuário com melhores validações, feedbacks de carregamento e um layout refinado.
+
+- **Commit 6 a 8 – Deploy, Vídeo Demonstrativo e Revisão:**  
+  Hospedar a aplicação na nuvem e preparar o vídeo demonstrativo.
+
 
 ## Instruções de Uso e Contato
 
