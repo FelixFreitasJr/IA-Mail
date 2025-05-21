@@ -2,3 +2,6 @@ flask
 pdfplumber
 transformers
 torch
+openai
+python-dotenv
+requests
