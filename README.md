@@ -15,32 +15,26 @@ O desafio é desenvolver uma aplicação que auxilie na gestão de um alto volum
 
 Nesta fase, já implementamos o upload e a leitura dos arquivos, seja via upload de `.txt` ou `.pdf`, ou pela inserção direta do texto.
 
-## Funcionalidades Implementadas
+## Funcionalidades
 
-- **Initial Commit:**  
-  Configuração básica do repositório.
+- **Upload e Extração de Texto:**
+  - Suporte a arquivos `.pdf` e `.txt`, além de input manual.
+  - Extração robusta com `pdfplumber` e tratamento de textos.
 
-- **Commit 1 – Estrutura Inicial e Upload de Arquivos:**  
-  - Estrutura do projeto definida utilizando o framework Flask, com pastas para templates, arquivos estáticos e o arquivo principal.
-  - Implementação do upload de arquivos `.pdf` e `.txt` e da inserção direta de texto via formulário.
-  - Renderização do conteúdo enviado na própria página.
+- **Classificação com IA:**
+  - Modelo `facebook/bart-large-mnli` da Hugging Face para zero-shot classification.
+  - Exibe categoria (`Produtivo` ou `Improdutivo`) e score de confiança.
 
-- **Commit 2 – Extração de Texto:**  
-  - Extração de texto de arquivos PDF utilizando o `pdfplumber`.
-  - Leitura e decodificação de arquivos `.txt` (encoded em UTF-8).
+- **Geração de Resposta Inteligente:**
+  - Integração com OpenRouter (GPT-3.5-turbo) para criação de respostas automáticas.
+  - Fallback com HuggingFace GPT-2 adaptado ao português.
+  - Registro de uso via `logging` com contador diário de chamadas.
 
-- **Commit 3 – Classificação com IA:**  
-  - Integração do modelo de classificação zero-shot (`facebook/bart-large-mnli` da Hugging Face) para classificar emails em duas categorias: **Produtivo** ou **Improdutivo**.
-  - Exibição do rótulo de classificação e do score obtido, informando ao usuário a qualidade da classificação.
+- **Interface Responsiva e Acessível:**
+  - Layout adaptável com Bootstrap.
+  - Modo escuro persistente com `localStorage`.
+  - Spinner de carregamento e botão "Copiar Resposta".
 
-- **Commit Final – Geração de Resposta e Melhorias na Interface:**  
-  - Integração com a API do OpenRouter (usada como proxy para OpenAI) para gerar respostas automáticas baseadas na classificação, com fallback para um modelo local (GPT-2 adaptado para português) quando a API principal não estiver disponível.
-  - Implementação de um contador de uso diário e registro em log para monitorar as chamadas à API, auxiliando no controle dos limites de uso.
-  - Adição de um botão "Copiar Resposta" para facilitar a transferência da resposta gerada para a área de transferência.
-  - Aprimoramento da interface com:
-    - Layout responsivo utilizando Bootstrap, garantindo boa experiência em dispositivos móveis e desktops.
-    - Modo escuro persistente (com estado armazenado via `localStorage`), que adapta elementos como inputs, botões, área de resposta e rodapé.
-    - Feedback visual com spinner de carregamento durante o processamento da requisição.
 
 
 ## Estrutura do Projeto
@@ -65,7 +59,7 @@ autou-email-classifier/
 
 1. **Clone o repositório:**
    ```bash
-   git clone <https://github.com/FelixFreitasJr/autou-email-classifier.git>
+   git clone https://github.com/FelixFreitasJr/autou-email-classifier.git
    cd autou-email-classifier 
 
 2. **Criação e Ativação do Ambiente Virtual:**
@@ -107,7 +101,13 @@ source .venv/bin/activate
   - **Aprimoramento do Frontend e Backend:** Refinar as validações, otimizar os feedbacks de carregamento e aprimorar a experiência do usuário em geral.  
   - **Deploy e Demonstração:** Realizar o deploy da aplicação na nuvem e preparar um vídeo demonstrativo detalhado que evidencie todas as funcionalidades implementadas.
 
+## Acesso Online
 
+Você pode testar a aplicação diretamente no link:
+
+🔗 [https://autou-email-classifier.onrender.com](https://autou-email-classifier.onrender.com)
+
+> Obs: pode demorar alguns segundos para iniciar caso esteja em modo de hibernação (Render Free Tier).
 
 ## Instruções de Uso e Contato
 
