@@ -17,12 +17,24 @@ Facilitar o atendimento ao cliente com um classificador inteligente que:
 
 ## 🚀 Funcionalidades
 
-- **Extração de Texto** via `pdfplumber`
+### 💡 Processamento Inteligente de E-mails
 - **Classificação e resposta automática** com OpenRouter (GPT-3.5-turbo)
-- **Interface com Bootstrap** responsiva e acessível
-- **Modo escuro persistente** com `localStorage`
-- **Botão de cópia e spinner de carregamento**
-- **Uso leve e otimizado para deploy em Render Free Tier**
+- **Extração de Texto** via `pdfplumber`
+- **Tratamento inteligente de e-mails "Improdutivos":**
+  - Classificação exibida normalmente.
+  - A resposta gerada fica oculta por padrão.
+  - O usuário pode clicar em "Visualizar resposta sugerida" para expandir, caso deseje ver a sugestão da IA.
+
+### 🎨 Interface e Experiência do Usuário
+- **Interface responsiva e acessível** com Bootstrap
+- **Modo escuro persistente** utilizando `localStorage`
+- **Botão de cópia** para facilitar o compartilhamento de respostas
+- **Spinner de carregamento** para indicar processamento da IA
+
+### 🚀 Otimização e Deploy
+- **Uso leve e otimizado para deploy** em Render Free Tier
+
+
 
 ## 🧱 Estrutura do Projeto
 

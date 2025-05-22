@@ -1,13 +1,24 @@
+/* ==========================
+   VARIÁVEIS DE CORES (CSS ROOT)
+   Definição de cores globais utilizando CSS variables.
+   Permite fácil alteração do tema sem modificar código diretamente.
+   ========================== */
+
 :root {
-    --bg-color: #f8f9fa;
-    --text-color: #212529;
-    --response-bg: #ffffff;
-    --footer-bg: #f8f9fa;
-    --footer-text: #212529;
-    --input-bg: #ffffff;
-    --input-border: #ced4da;
-    --input-text: #212529;
+    --bg-color: #f8f9fa;       /* Cor de fundo padrão */
+    --text-color: #212529;      /* Cor do texto padrão */
+    --response-bg: #ffffff;     /* Cor de fundo para caixas de resposta */
+    --footer-bg: #f8f9fa;       /* Cor de fundo do rodapé */
+    --footer-text: #212529;     /* Cor do texto no rodapé */
+    --input-bg: #ffffff;        /* Cor de fundo dos inputs */
+    --input-border: #ced4da;    /* Cor da borda dos inputs */
+    --input-text: #212529;      /* Cor do texto nos inputs */
 }
+
+/* ==========================
+   ESTILIZAÇÃO GLOBAL DO BODY
+   Configuração de cor de fundo, texto e transições suaves para mudança de tema.
+   ========================== */
 
 body {
     background-color: var(--bg-color);
@@ -15,10 +26,19 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+/* ==========================
+   ESTILO DA INFORMAÇÃO DE USO DA API
+   ========================== */
+
 .usage-info {
     margin-top: 20px;
     text-align: center;
 }
+
+/* ==========================
+   CAIXA DE RESPOSTA
+   Estilização do bloco que exibe os resultados.
+   ========================== */
 
 .response-box {
     background-color: var(--response-bg);
@@ -28,16 +48,27 @@ body {
     margin-top: 15px;
 }
 
+/* ==========================
+   SPINNER DE CARREGAMENTO
+   Ícone de carregamento exibido durante o processamento do formulário.
+   ========================== */
+
 #loading {
     display: none;
     text-align: center;
     margin-top: 20px;
 }
 
+/* ==========================
+   BOTÕES INTERATIVOS
+   Estilização do botão de copiar resposta e alternar modo escuro.
+   ========================== */
+
 .copy-btn {
     margin-bottom: 10px;
 }
 
+/* Posiciona o botão de modo escuro no canto superior direito da tela */
 .toggle-dark-btn {
     position: fixed;
     top: 10px;
@@ -45,11 +76,20 @@ body {
     z-index: 1000;
 }
 
+/* ==========================
+   ESTILIZAÇÃO DOS INPUTS
+   ========================== */
+
 .form-control {
     background-color: var(--input-bg);
     color: var(--input-text);
     border: 1px solid var(--input-border);
 }
+
+/* ==========================
+   MODO ESCURO (DARK MODE)
+   Define novas cores para o tema escuro utilizando CSS variables.
+   ========================== */
 
 .dark-mode {
     --bg-color: #212529;
@@ -62,23 +102,35 @@ body {
     --input-text: #f8f9fa;
 }
 
+/* Ajusta aparência dos botões no modo escuro */
 .dark-mode .btn {
     background-color: #495057 !important;
     border-color: #495057 !important;
     color: #f8f9fa !important;
 }
 
+/* Ajuste específico para campo de upload no modo escuro */
 .dark-mode input[type="file"].form-control {
     background-color: var(--input-bg) !important;
     color: var(--input-text) !important;
     border: 1px solid var(--input-border) !important;
 }
 
+/* ==========================
+   RODAPÉ
+   Define cores e transições suaves para mudanças de tema.
+   ========================== */
+
 footer {
     background-color: var(--footer-bg);
     color: var(--footer-text);
     transition: background-color 0.3s, color 0.3s;
 }
+
+/* ==========================
+   AJUSTE RESPONSIVO
+   Define espaçamento adequado para telas pequenas (mobile).
+   ========================== */
 
 @media (max-width: 576px) {
     .container {
