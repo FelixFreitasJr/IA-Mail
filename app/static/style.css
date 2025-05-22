@@ -1,9 +1,4 @@
-/* ==========================
-   VARIÁVEIS DE CORES (CSS ROOT)
-   Definição de cores globais utilizando CSS variables.
-   Permite fácil alteração do tema sem modificar código diretamente.
-   ========================== */
-
+/* Cores globais para fácil customização */
 :root {
     --bg-color: #f8f9fa;       /* Cor de fundo padrão */
     --text-color: #212529;      /* Cor do texto padrão */
@@ -15,30 +10,17 @@
     --input-text: #212529;      /* Cor do texto nos inputs */
 }
 
-/* ==========================
-   ESTILIZAÇÃO GLOBAL DO BODY
-   Configuração de cor de fundo, texto e transições suaves para mudança de tema.
-   ========================== */
-
+/* Estilos gerais */
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* ==========================
-   ESTILO DA INFORMAÇÃO DE USO DA API
-   ========================== */
-
 .usage-info {
     margin-top: 20px;
     text-align: center;
 }
-
-/* ==========================
-   CAIXA DE RESPOSTA
-   Estilização do bloco que exibe os resultados.
-   ========================== */
 
 .response-box {
     background-color: var(--response-bg);
@@ -48,27 +30,19 @@ body {
     margin-top: 15px;
 }
 
-/* ==========================
-   SPINNER DE CARREGAMENTO
-   Ícone de carregamento exibido durante o processamento do formulário.
-   ========================== */
-
+/* Ícone de carregamento */
 #loading {
     display: none;
     text-align: center;
     margin-top: 20px;
 }
 
-/* ==========================
-   BOTÕES INTERATIVOS
-   Estilização do botão de copiar resposta e alternar modo escuro.
-   ========================== */
-
+/* Botões */
 .copy-btn {
     margin-bottom: 10px;
 }
 
-/* Posiciona o botão de modo escuro no canto superior direito da tela */
+/* Botão modo escuro */
 .toggle-dark-btn {
     position: fixed;
     top: 10px;
@@ -76,21 +50,14 @@ body {
     z-index: 1000;
 }
 
-/* ==========================
-   ESTILIZAÇÃO DOS INPUTS
-   ========================== */
-
+/* Estilização dos inputs */
 .form-control {
     background-color: var(--input-bg);
     color: var(--input-text);
     border: 1px solid var(--input-border);
 }
 
-/* ==========================
-   MODO ESCURO (DARK MODE)
-   Define novas cores para o tema escuro utilizando CSS variables.
-   ========================== */
-
+/* Modo escuro */
 .dark-mode {
     --bg-color: #212529;
     --text-color: #f8f9fa;
@@ -116,22 +83,14 @@ body {
     border: 1px solid var(--input-border) !important;
 }
 
-/* ==========================
-   RODAPÉ
-   Define cores e transições suaves para mudanças de tema.
-   ========================== */
-
+/* Define cores e transições suaves para mudanças de tema.*/
 footer {
     background-color: var(--footer-bg);
     color: var(--footer-text);
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* ==========================
-   AJUSTE RESPONSIVO
-   Define espaçamento adequado para telas pequenas (mobile).
-   ========================== */
-
+/* Define espaçamento adequado para telas pequenas (mobile).*/
 @media (max-width: 576px) {
     .container {
         padding-left: 10px;

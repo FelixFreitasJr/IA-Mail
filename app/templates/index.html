@@ -6,28 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Classificador de Emails - Atendimento</title>
 
-    <!-- =======================
-         ESTILOS E FRAMEWORKS 
-         ======================= -->
-
-    <!-- Importa o Bootstrap para estilização e responsividade -->
+    <!-- Estilos e Frameworks -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Importa a folha de estilos personalizada armazenada na pasta "static" -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-    <!-- =======================
-         CONTEÚDO PRINCIPAL 
-         ======================= -->
+    <!-- Botão para alternar entre modo claro e escuro -->
+    <button class="btn btn-secondary toggle-dark-btn" onclick="toggleDarkMode()">Modo Escuro</button>
 
     <div class="container mt-5">
         <h1 class="mb-4 text-center">Classificador de Emails</h1>
 
-        <!-- =======================
-             FORMULÁRIO DE ENVIO 
-             ======================= -->
+        <!-- Formulário de envio de arquivos ou texto manual -->
         <form method="post" enctype="multipart/form-data" id="emailForm">
             <div class="mb-3">
                 <label for="file" class="form-label">Envie um arquivo (.pdf ou .txt):</label>
@@ -40,17 +31,13 @@
             <button type="submit" class="btn btn-primary">Gerar</button>
         </form>
 
-        <!-- =======================
-             SPINNER DE CARREGAMENTO
-             ======================= -->
+        <!-- Indicador de carregamento ao enviar o formulário -->
         <div id="loading" class="text-center mt-4" style="display: none;">
             <div class="spinner-border text-primary" role="status"></div>
             <p>Processando sua solicitação...</p>
         </div>
 
-        <!-- =======================
-             EXIBIÇÃO DO TEXTO PROCESSADO
-             ======================= -->
+        <!-- Exibição do texto processado -->
         {% if input_text %}
         <hr>
         <h5>Texto processado:</h5>
@@ -59,21 +46,19 @@
         </div>
         {% endif %}
 
-        <!-- =======================
-             EXIBIÇÃO DA CLASSIFICAÇÃO E RESPOSTA GERADA
-             ======================= -->
+        <!-- Exibição da classificação e resposta gerada -->
         {% if result_text %}
         <hr>
         <h5>Classificação e Resposta:</h5>
 
-        <!-- Se a classificação for "Produtivo", exibe diretamente -->
+        <!-- Caso o email seja Produtivo, exibe a resposta diretamente -->
         {% if "Produtivo" in result_text %}
         <div class="response-box">
             <p>{{ result_text }}</p>
             <button type="button" class="btn btn-outline-secondary btn-sm mt-2" onclick="copyToClipboard()">Copiar Resposta</button>
         </div>
 
-        <!-- Se for "Improdutivo", oculta inicialmente a resposta até que o botão seja pressionado -->
+        <!-- Caso seja Improdutivo, oculta inicialmente a resposta -->
         {% elif "Improdutivo" in result_text %}
         <p><strong>Categoria:</strong> Improdutivo</p>
         <button class="btn btn-outline-secondary btn-sm" onclick="toggleHiddenResponse()">Visualizar resposta sugerida</button>
@@ -86,24 +71,18 @@
         {% endif %}
         {% endif %}
 
-        <!-- =======================
-             MENSAGEM DE ERRO (CASO OCORRA)
-             ======================= -->
+        <!-- Mensagem de erro, caso ocorra -->
         {% if error_message %}
         <div class="alert alert-danger mt-3">{{ error_message }}</div>
         {% endif %}
 
-        <!-- =======================
-             CONTADOR DE USO DA API
-             ======================= -->
+        <!-- Contador de uso da API -->
         <p class="text-center mt-4">
             <small>Uso: {{ api_usage }} de {{ daily_limit }} chamadas diárias</small>
         </p>
     </div>
 
-    <!-- =======================
-         RODAPÉ COM CRÉDITOS E LINK DO GITHUB
-         ======================= -->
+    <!-- Rodapé com créditos e link do GitHub -->
     <footer class="mt-5 py-3 border-top">
         <div class="container text-center">
             <small>
@@ -115,9 +94,7 @@
         </div>
     </footer>
 
-    <!-- =======================
-         IMPORTAÇÃO DO JAVASCRIPT EXTERNO
-         ======================= -->
+    <!-- Importação do script JavaScript externo -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
