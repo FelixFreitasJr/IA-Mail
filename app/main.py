@@ -16,7 +16,12 @@ logging.basicConfig(
 # Carrega variáveis do .env
 load_dotenv()
 
-print("Chave OpenRouter:", os.getenv("OPENROUTER_API_KEY")[:10], "...")
+openrouter_api = os.getenv("OPENROUTER_API_KEY")
+if openrouter_api:
+    print("Chave OpenRouter:", openrouter_api[:10], "...")
+else:
+    print("ATENÇÃO: OPENROUTER_API_KEY não definida!")
+
 
 app = Flask(__name__)
 
