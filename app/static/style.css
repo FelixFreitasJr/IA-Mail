@@ -1,0 +1,88 @@
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --response-bg: #ffffff;
+    --footer-bg: #f8f9fa;
+    --footer-text: #212529;
+    --input-bg: #ffffff;
+    --input-border: #ced4da;
+    --input-text: #212529;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.usage-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.response-box {
+    background-color: var(--response-bg);
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+    margin-top: 15px;
+}
+
+#loading {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.copy-btn {
+    margin-bottom: 10px;
+}
+
+.toggle-dark-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.form-control {
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border: 1px solid var(--input-border);
+}
+
+.dark-mode {
+    --bg-color: #212529;
+    --text-color: #f8f9fa;
+    --response-bg: #343a40;
+    --footer-bg: #343a40;
+    --footer-text: #f8f9fa;
+    --input-bg: #343a40;
+    --input-border: #495057;
+    --input-text: #f8f9fa;
+}
+
+.dark-mode .btn {
+    background-color: #495057 !important;
+    border-color: #495057 !important;
+    color: #f8f9fa !important;
+}
+
+.dark-mode input[type="file"].form-control {
+    background-color: var(--input-bg) !important;
+    color: var(--input-text) !important;
+    border: 1px solid var(--input-border) !important;
+}
+
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
