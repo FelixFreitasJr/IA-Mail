@@ -1,9 +1,9 @@
-# AutoU Email Classifier
+# IA-Mail - Respostas Inteligentes
 
 > “Do. Or do not. There is no try.”  
 > – Mestre Yoda
 
-Bem-vindo ao **AutoU Email Classifier**!  
+Bem-vindo ao **IA-Mail**!  
 Este projeto é uma solução digital para automatizar a leitura, classificação e resposta de e-mails para empresas com alto volume de comunicação.
 
 ## 🎯 Objetivo
@@ -20,10 +20,7 @@ Facilitar o atendimento ao cliente com um classificador inteligente que:
 ### 💡 Processamento Inteligente de E-mails
 - **Classificação e resposta automática** com OpenRouter (GPT-3.5-turbo)
 - **Extração de Texto** via `pdfplumber`
-- **Tratamento inteligente de e-mails "Improdutivos":**
-  - Classificação exibida normalmente.
-  - A resposta gerada fica oculta por padrão.
-  - O usuário pode clicar em "Visualizar resposta sugerida" para expandir, caso deseje ver a sugestão da IA.
+- **Organização visual aprimorada**: a resposta gerada fica oculta por padrão, podendo ser visualizada com um clique.
 
 ### 🎨 Interface e Experiência do Usuário
 - **Interface responsiva e acessível** com Bootstrap
@@ -34,8 +31,6 @@ Facilitar o atendimento ao cliente com um classificador inteligente que:
 ### 🚀 Otimização e Deploy
 - **Uso leve e otimizado para deploy** em Render Free Tier
 
-
-
 ## 🧱 Estrutura do Projeto
 
 ```
@@ -44,8 +39,7 @@ autou-email-classifier/
 │ ├── templates/
 │ │ └── index.html
 │ ├── static/
-│ │ ├── style.css
-│ │ └── script.js
+│ │ └── style.css
 │ └── main.py
 ├── requirements.txt
 ├── Procfile

@@ -21,8 +21,10 @@ def extract_text_from_pdf(file):
 # Classificação do e-mail e geração de resposta automática
 def classify_and_respond(email_content):
     global api_usage
+
+    # Tratativa clara para limite de requisições atingido
     if api_usage >= DAILY_LIMIT:
-        return ("Limite diário atingido.", "")
+        return ("Você atingiu o limite diário de requisições. Tente novamente amanhã.", "Limite diário atingido.")
 
     prompt = f"""
 Considere o seguinte e-mail:
