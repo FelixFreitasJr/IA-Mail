@@ -15,7 +15,9 @@
     <button class="btn btn-secondary toggle-dark-btn" onclick="toggleDarkMode()">Modo Escuro</button>
 
     <div class="container mt-5">
-        <h1 class="mb-4 text-center">IA-Mail - Classificação e Respostas Automáticas</h1>
+        <h1 class="mb-4 text-center">IA-Mail</h1>
+        <h2 class="text-center">Classificação e Respostas Automáticas de E-mail</h2>
+
 
         <!-- Tratativa de limite atingido -->
         {% if api_usage >= daily_limit %}
@@ -43,7 +45,6 @@
             <p>Processando sua solicitação...</p>
         </div>
 
-        <!-- Exibição do texto processado -->
         {% if input_text %}
         <hr>
         <h5>Texto processado:</h5>
@@ -52,45 +53,26 @@
         </div>
         {% endif %}
 
-        <!-- Exibição da classificação e resposta gerada -->
-        {% if result_text %}
+        {% if classification %}
         <hr>
         <h5>Classificação e Resposta:</h5>
-
-        <!-- Se a classificação for "Produtivo", exibir como na versão improdutiva -->
-        {% if "Produtivo" in result_text %}
-        <p><strong>Categoria:</strong> Produtivo</p>
+        <p><strong>Categoria:</strong> {{ classification }}</p>
         <button class="btn btn-outline-secondary btn-sm" onclick="toggleHiddenResponse()">Visualizar resposta sugerida</button>
         <div id="hiddenResponse" class="response-box mt-2" style="display: none;">
-            <p>{{ result_text }}</p>
+            <p>{{ response }}</p>
             <button type="button" class="btn btn-outline-secondary btn-sm" onclick="copyToClipboard()">Copiar Resposta</button>
         </div>
-
-        <!-- Se for "Improdutivo", mesma estrutura de exibição -->
-        {% elif "Improdutivo" in result_text %}
-        <p><strong>Categoria:</strong> Improdutivo</p>
-        <button class="btn btn-outline-secondary btn-sm" onclick="toggleHiddenResponse()">Visualizar resposta sugerida</button>
-        <div id="hiddenResponse" class="response-box mt-2" style="display: none;">
-            <p>{{ result_text }}</p>
-            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="copyToClipboard()">Copiar Resposta</button>
-        </div>
-        {% else %}
-        <p>{{ result_text }}</p>
-        {% endif %}
         {% endif %}
 
-        <!-- Mensagem de erro, caso ocorra -->
         {% if error_message %}
         <div class="alert alert-danger mt-3">{{ error_message }}</div>
         {% endif %}
 
-        <!-- Contador de uso da API -->
         <p class="text-center mt-4">
             <small>Uso: {{ api_usage }} de {{ daily_limit }} chamadas diárias</small>
         </p>
     </div>
 
-    <!-- Rodapé com créditos e link do GitHub -->
     <footer class="mt-5 py-3 border-top">
         <div class="container text-center">
             <small>
@@ -102,9 +84,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript embutido para evitar travamentos -->
     <script>
-        // Alterna entre modo claro e escuro
         function toggleDarkMode() {
             document.body.classList.toggle("dark-mode");
             var btn = document.querySelector('.toggle-dark-btn');
@@ -112,7 +92,6 @@
             localStorage.setItem('darkMode', document.body.classList.contains("dark-mode"));
         }
 
-        // Copia a resposta para a área de transferência
         function copyToClipboard() {
             var responseText = document.getElementById("hiddenResponse");
             if (responseText) {
@@ -122,7 +101,6 @@
             }
         }
 
-        // Alterna a visibilidade da resposta sugerida
         function toggleHiddenResponse() {
             const hiddenDiv = document.getElementById("hiddenResponse");
             if (hiddenDiv) {
@@ -130,14 +108,11 @@
             }
         }
 
-        // Aplica modo escuro ao carregar a página
         window.onload = function () {
             if (localStorage.getItem('darkMode') === 'true') {
                 document.body.classList.add("dark-mode");
                 document.querySelector('.toggle-dark-btn').innerText = "Modo Claro";
             }
-
-            // Exibe o spinner ao enviar o formulário
             document.getElementById('emailForm').addEventListener('submit', function () {
                 document.getElementById('loading').style.display = 'block';
             });

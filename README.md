@@ -36,16 +36,20 @@ Facilitar o atendimento ao cliente com um classificador inteligente que:
 ```
 autou-email-classifier/
 ├── app/
+│ ├── __init__.py          # Arquivo necessário para tornar 'app' um pacote Python
 │ ├── templates/
-│ │ └── index.html
+│ │ └── index.html         # Template principal da aplicação
 │ ├── static/
-│ │ └── style.css
-│ └── main.py
-├── requirements.txt
-├── Procfile
-├── render.yaml
-├── .env (não versionado)
-└── README.md
+│ │ └── style.css         # Arquivo de estilos para a interface
+│ └── main.py             # Código principal da aplicação Flask
+├── requirements.txt       # Lista de dependências do projeto
+├── Procfile               # Arquivo para configurar o deploy no Render
+├── render.yaml            # Configuração de build no Render
+├── runtime.txt            # Define a versão do Python usada no ambiente
+├── LICENSE                # Informações de licenciamento do projeto
+├── .gitignore             # Arquivos e diretórios ignorados pelo Git
+├── .env (não versionado)  # Variáveis de ambiente privadas
+└── README.md              # Documentação do projeto
 
 ```
 
@@ -102,6 +106,19 @@ Aplicação hospedada em:
 2. Copie a resposta com 1 clique.
 
 2. Visualize seu uso diário de chamadas.
+
+## 🔮 Futuro do IA-Mail
+
+Atualmente, IA-Mail oferece um **modelo gratuito** com limite diário de chamadas e funcionalidades otimizadas para processamento de e-mails. No entanto, estamos planejando **versões futuras** que irão expandir as capacidades da plataforma:
+
+### 🚀 Versão Premium (Recursos Futuramente Disponíveis)
+- **📷 Leitura de Imagens**: Capacidade de interpretar textos em imagens anexadas aos e-mails.
+- **🤖 IA Avançada (GPT-4-turbo)**: Processamento mais rápido, respostas mais detalhadas e suporte a perguntas abertas.
+- **🔄 Histórico de Consultas**: Armazenamento de respostas anteriores sem limite diário.
+- **⚙️ Ajuste Personalizado**: Opções para configurar estilo e tom das respostas automáticas.
+- **📡 API Profissional**: Integração direta com sistemas corporativos para otimizar fluxos de atendimento.
+
+Essas melhorias estão em **planejamento**, e em breve disponibilizaremos **novidades sobre versões premium**. Fique atento! 🚀
 
 ## ✉️ Contato
 
