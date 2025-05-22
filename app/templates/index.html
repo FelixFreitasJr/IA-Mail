@@ -18,7 +18,6 @@
         <h1 class="mb-4 text-center">IA-Mail</h1>
         <h2 class="text-center">Classificação e Respostas Automáticas de E-mail</h2>
 
-
         <!-- Tratativa de limite atingido -->
         {% if api_usage >= daily_limit %}
         <div class="alert alert-warning text-center mt-3">
@@ -26,7 +25,6 @@
         </div>
         {% endif %}
 
-        <!-- Formulário para envio de arquivos ou texto manual -->
         <form method="post" enctype="multipart/form-data" id="emailForm">
             <div class="mb-3">
                 <label for="file" class="form-label">Envie um arquivo (.pdf ou .txt):</label>
@@ -39,24 +37,23 @@
             <button type="submit" class="btn btn-primary">Gerar</button>
         </form>
 
-        <!-- Indicador de carregamento ao enviar o formulário -->
         <div id="loading" class="text-center mt-4" style="display: none;">
             <div class="spinner-border text-primary" role="status"></div>
-            <p>Processando sua solicitação...</p>
+            <p>Processando...</p>
         </div>
 
         {% if input_text %}
         <hr>
         <h5>Texto processado:</h5>
         <div class="response-box">
-            <pre>{{ input_text }}</pre>
+            <p>{{ input_text }}</p>
         </div>
         {% endif %}
 
         {% if classification %}
         <hr>
-        <h5>Classificação e Resposta:</h5>
-        <p><strong>Categoria:</strong> {{ classification }}</p>
+        <h5>Classificação:</h5>
+        <p><strong>{{ classification }}</strong></p>
         <button class="btn btn-outline-secondary btn-sm" onclick="toggleHiddenResponse()">Visualizar resposta sugerida</button>
         <div id="hiddenResponse" class="response-box mt-2" style="display: none;">
             <p>{{ response }}</p>
@@ -64,26 +61,18 @@
         </div>
         {% endif %}
 
-        {% if error_message %}
-        <div class="alert alert-danger mt-3">{{ error_message }}</div>
-        {% endif %}
-
         <p class="text-center mt-4">
             <small>Uso: {{ api_usage }} de {{ daily_limit }} chamadas diárias</small>
         </p>
     </div>
 
-    <footer class="mt-5 py-3 border-top">
-        <div class="container text-center">
-            <small>
-                Desenvolvido por FelixFreitasJr | IA-Mail © 2025 | 
-                <a href="https://github.com/FelixFreitasJr/ia-mail" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i> GitHub - Repositório
-                </a>
-            </small>
-        </div>
+    <footer class="mt-5 py-3 border-top text-center">
+        <small>Desenvolvido por FelixFreitasJr | IA-Mail © 2025 |
+            <a href="https://github.com/FelixFreitasJr/ia-mail" target="_blank">GitHub - Repositório</a>
+        </small>
     </footer>
 
+    <!-- JavaScript embutido para melhorar a usabilidade -->
     <script>
         function toggleDarkMode() {
             document.body.classList.toggle("dark-mode");

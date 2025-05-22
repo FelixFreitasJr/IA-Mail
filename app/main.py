@@ -11,7 +11,7 @@ openrouter_api = os.getenv("OPENROUTER_API_KEY")
 
 # Controle de uso da API
 api_usage = 0
-DAILY_LIMIT = 10
+DAILY_LIMIT = 20  # Atualizado para 20 chamadas diárias
 
 # Função para extrair texto de um arquivo PDF
 def extract_text_from_pdf(file):
@@ -53,7 +53,7 @@ Considere o seguinte e-mail:
 
         # Separando classificação e resposta corretamente
         classification, response = full_text.split("Resposta:", 1) if "Resposta:" in full_text else ("", full_text)
-        classification = classification.replace("Classificação:", "").strip()
+        classification = classification.replace("Classificação:", "").replace("1.", "").replace("2.", "").strip()
 
         return (classification, response)
 
