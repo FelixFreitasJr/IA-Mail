@@ -34,30 +34,29 @@ Facilitar o atendimento ao cliente com um classificador inteligente que:
 ## 🧱 Estrutura do Projeto
 
 ```
-autou-email-classifier/
+ia-mail/
 ├── app/
-│ ├── __init__.py          # Arquivo necessário para tornar 'app' um pacote Python
-│ ├── templates/
-│ │ └── index.html         # Template principal da aplicação
-│ ├── static/
-│ │ └── style.css         # Arquivo de estilos para a interface
-│ └── main.py             # Código principal da aplicação Flask
-├── requirements.txt       # Lista de dependências do projeto
-├── Procfile               # Arquivo para configurar o deploy no Render
-├── render.yaml            # Configuração de build no Render
-├── runtime.txt            # Define a versão do Python usada no ambiente
-├── LICENSE                # Informações de licenciamento do projeto
-├── .gitignore             # Arquivos e diretórios ignorados pelo Git
-├── .env (não versionado)  # Variáveis de ambiente privadas
-└── README.md              # Documentação do projeto
-
+│   ├── __init__.py
+│   ├── templates/
+│   │   └── index.html
+│   ├── static/
+│   │   └── style.css
+│   └── main.py
+├── requirements.txt
+├── Procfile
+├── render.yaml
+├── runtime.txt
+├── LICENSE
+├── .gitignore
+├── .env (não versionado)
+└── README.md
 ```
 
 ## ⚙️ Instalação Local
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/FelixFreitasJr/autou-email-classifier.git
+   git clone https://github.com/FelixFreitasJr/ia-mail.git
    cd autou-email-classifier 
 
 2. **Criação e Ativação do Ambiente Virtual:**
@@ -84,7 +83,8 @@ source .venv/bin/activate
    python app/main.py 
 ```
 
-5. **Acesso à Aplicação: Abra seu navegador e acesse http://127.0.0.1:5000**
+5. **Acesso à Aplicação:**
+   http://127.0.0.1:5000**
 
 
 ## ☁️ Deploy
@@ -98,14 +98,10 @@ Aplicação hospedada em:
 ## 💡 Como Usar
 
 1. Faça upload de um `.pdf`, `.txt` ou cole o texto do e-mail.
-
 2. Clique em **Gerar**.
-
-2. Veja a **classificação** e a **resposta sugerida**.
-
-2. Copie a resposta com 1 clique.
-
-2. Visualize seu uso diário de chamadas.
+3. Veja a **classificação** e a **resposta sugerida**.
+4. Copie a resposta com 1 clique.
+5. Visualize seu uso diário de chamadas.
 
 ## 🔮 Futuro do IA-Mail
 
@@ -124,7 +120,7 @@ Essas melhorias estão em **planejamento**, e em breve disponibilizaremos **novi
 
 Em caso de dúvidas ou sugestões:
 
-- [Abrir issue no GitHub](https://github.com/FelixFreitasJr/autou-email-classifier/issues).
+- [Abrir issue no GitHub](https://github.com/FelixFreitasJr/ia-mail/issues).
 
 - ou contato direto pelo perfil no GitHub.
 
